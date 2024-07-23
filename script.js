@@ -23,7 +23,7 @@ function getMealList(){
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`)
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
+        console.log(data);
         let html = "";
         if(data.meals){
             data.meals.forEach(meal => {
@@ -44,7 +44,7 @@ function getMealList(){
             mealList.classList.remove('notFound');
         }
         else{
-            html="Sorry, we could not find any meal with that ingredient name! &#128531"
+            html="Sorry, we could not find any meal with that ingredient name! &#128531";
             mealList.classList.add('notFound');
         }
 
